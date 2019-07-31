@@ -41,7 +41,7 @@ about:
   license: Epics Open
   summary: Python interface to Epics Channel Access
   # https://github.com/pyepics/pyepics/pull/108
-  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE.txt'
   dev_url: https://github.com/pyepics/pyepics
   doc_url: http://pyepics.github.io/pyepics
 
