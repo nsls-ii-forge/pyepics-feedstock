@@ -1,6 +1,6 @@
 {% set name = "pyepics" %}
 {% set version = "3.4.0" %}
-{% set sha256 = "8c8689e5dc4401a64cf535a206552d2251bcd620afa190ef288a4a95537fcb32" %}
+{% set sha256 = "a2913ee5fdab9dfb3d50c0ccb83f7129902e6fdc7ce9c4c1cc9d0d4b2f9c0438" %}
 
 package:
   name: {{ name|lower }}
