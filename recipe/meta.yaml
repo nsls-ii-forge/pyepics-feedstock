@@ -14,12 +14,13 @@ build:
       export NOLIBCA=1
       echo "Using LIBCA from $PYEPICS_LIBCA"
       rm -rf epics/clibs
-      python setup.py install --single-version-externally-managed --record=record.txt
+      "{{ PYTHON }} -m pip install . --no-deps -vv"
+    skip: True  # [py<36]
 
 requirements:
     build:
-        - python
-        - setuptools
+        - python 
+        - pip
         - numpy
     run:
         - python
