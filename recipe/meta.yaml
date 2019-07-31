@@ -1,47 +1,54 @@
+{% set name = "pyepics" %}
 {% set version = "3.4.0" %}
+{% set sha256 = "8c8689e5dc4401a64cf535a206552d2251bcd620afa190ef288a4a95537fcb32" %}
+
 package:
-    name: pyepics
-    version: {{ version }}
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-    url: https://github.com/pyepics/pyepics/archive/{{ version }}.tar.gz
-    fn: pyepics-{{ version }}.tar.gz
-    patches:
-      - libca.patch
+   fn: {{ name }}-{{ version }}.tar.gz
+   url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz
+   sha256: {{ sha256 }}
+
 build:
-    number: 1
-    script: |
-      export NOLIBCA=1
-      echo "Using LIBCA from $PYEPICS_LIBCA"
-      rm -rf epics/clibs
-      "{{ PYTHON }} -m pip install . --no-deps -vv"
-    skip: True  # [py<36]
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  skip: True # [py<36]
 
 requirements:
-    build:
-        - python 
-        - pip
-        - numpy
-    run:
-        - python
-        - numpy
-        - epics-base
+  build:
+      - python
+      - pip
+      - numpy
+      - pyparsing
+
+  run:
+      - python
+      - pip
+      - numpy
+      - pyparsing
 
 test:
-    imports:
-        - epics
-        - epics.ca
-
-    commands:
-      - python -c "import epics.ca; libca = epics.ca.find_libca(); assert 'lib' in libca; import os; assert epics.ca.find_libca().startswith(os.environ['CONDA_PREFIX']); assert 'clibs' not in epics.ca.find_libca()"
+  imports:
+    - epics
+    - epics.autosave
+    - epics.compat
+    - epics.devices
 
 about:
-    home: http://pyepics.github.io/pyepics/
-    license: Epics Open License
-    summary: Python interface to Epics Channel Access
+  home: http://pyepics.github.io/pyepics/
+  license: Epics Open
+  summary: Python interface to Epics Channel Access
+  # https://github.com/pyepics/pyepics/pull/108
+  license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
+  dev_url: https://github.com/pyepics/pyepics
+  doc_url: http://pyepics.github.io/pyepics
 
 extra:
   recipe-maintainers:
-    - ericdill
-    - licode
-    - tacaswell
+    - CJ-Wright
+    - jrmlhermitte
+    - stuartcampbell
+    - mrakitin
+    - hhslepicka
