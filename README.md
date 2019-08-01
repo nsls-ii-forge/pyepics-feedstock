@@ -3,7 +3,7 @@ About pyepics
 
 Home: http://pyepics.github.io/pyepics/
 
-Package license: Epics Open License
+Package license: Epics Open
 
 Feedstock license: BSD 3-Clause
 
@@ -29,13 +29,6 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=8&branchName=master">
-                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/pyepics-feedstock?branchName=master&jobName=linux&configuration=linux_python2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>linux_python3.6</td>
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=8&branchName=master">
@@ -50,13 +43,6 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=8&branchName=master">
-                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/pyepics-feedstock?branchName=master&jobName=osx&configuration=osx_python2.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
               <td>osx_python3.6</td>
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=8&branchName=master">
@@ -68,13 +54,6 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=8&branchName=master">
                   <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/pyepics-feedstock?branchName=master&jobName=osx&configuration=osx_python3.7" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>win_python2.7</td>
-              <td>
-                <a href="https://dev.azure.com/nsls2forge/nsls2forge/_build/latest?definitionId=8&branchName=master">
-                  <img src="https://dev.azure.com/nsls2forge/nsls2forge/_apis/build/status/pyepics-feedstock?branchName=master&jobName=win&configuration=win_python2.7" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -156,7 +135,9 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@ericdill](https://github.com/ericdill/)
-* [@licode](https://github.com/licode/)
-* [@tacaswell](https://github.com/tacaswell/)
+* [@CJ-Wright](https://github.com/CJ-Wright/)
+* [@hhslepicka](https://github.com/hhslepicka/)
+* [@jrmlhermitte](https://github.com/jrmlhermitte/)
+* [@mrakitin](https://github.com/mrakitin/)
+* [@stuartcampbell](https://github.com/stuartcampbell/)
 
