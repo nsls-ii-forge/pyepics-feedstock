@@ -10,13 +10,12 @@ source:
    fn: {{ name }}-{{ version }}.tar.gz
    url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz
    sha256: {{ sha256 }}
-
+   patches:
+      - libca.patch
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
   skip: True # [py<36]
-  patches:
-      - libca.patch
 requirements:
   build:
       - python
