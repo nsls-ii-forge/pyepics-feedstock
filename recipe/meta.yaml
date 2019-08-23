@@ -24,6 +24,7 @@ requirements:
     - python
     - numpy
     - pyparsing
+    - setuptools  # needed to import pkg_resources
 
 test:
   imports:
