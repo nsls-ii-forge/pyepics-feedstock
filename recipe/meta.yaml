@@ -1,6 +1,6 @@
 {% set name = "pyepics" %}
-{% set version = "3.4.0" %}
-{% set sha256 = "a2913ee5fdab9dfb3d50c0ccb83f7129902e6fdc7ce9c4c1cc9d0d4b2f9c0438" %}
+{% set version = "3.3.0" %}
+{% set sha256 = "30e3be02436dc27eb2e485a67e334ae4ff35e94cc29427a9887ed1ab82cc014e" %}
 
 package:
   name: {{ name|lower }}
@@ -8,33 +8,29 @@ package:
 
 source:
    fn: {{ name }}-{{ version }}.tar.gz
-   url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz
+   url: https://github.com/{{ name }}/{{ name }}/archive/{{ version }}.tar.gz
    sha256: {{ sha256 }}
-   patches:
-      - libca.patch
+
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
   skip: True # [py<36]
+
 requirements:
   build:
-      - python
-      - setuptools
-      - numpy
-      - pyparsing
-
+    - python
+    - setuptools
   run:
-      - python
-      - setuptools
-      - numpy
-      - pyparsing
+    - python
+    - numpy
+    - pyparsing
 
 test:
   imports:
-    - epics
-    - epics.autosave
-    - epics.compat
-    - epics.devices
+  - epics
+  - epics.autosave
+  - epics.compat
+  - epics.devices
 
 about:
   home: http://pyepics.github.io/pyepics/
@@ -44,11 +40,3 @@ about:
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
   dev_url: https://github.com/pyepics/pyepics
   doc_url: http://pyepics.github.io/pyepics
-
-extra:
-  recipe-maintainers:
-    - CJ-Wright
-    - jrmlhermitte
-    - stuartcampbell
-    - mrakitin
-    - hhslepicka
