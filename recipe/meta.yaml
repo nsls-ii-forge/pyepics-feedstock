@@ -12,16 +12,22 @@ source:
    sha256: {{ sha256 }}
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  number: 1
   skip: True # [py<36]
+  script: |
+    export PYEPICS_LIBCA=$PREFIX/lib/libca.so  # [not win]
+    export NOLIBCA=1  # [not win]
+    echo "Using LIBCA from $PYEPICS_LIBCA"  # [not win]
+    python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
     - python
+    - epics-base
     - setuptools
   run:
     - python
+    - epics-base
     - numpy
     - pyparsing
     - setuptools  # needed to import pkg_resources
