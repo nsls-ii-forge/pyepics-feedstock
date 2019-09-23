@@ -7,22 +7,20 @@ package:
   version: {{ version }}
 
 source:
-   fn: {{ name }}-{{ version }}.tar.gz
    url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz
    sha256: {{ sha256 }}
    patches:
-      - libca.patch
+     - libca.patch
+
 build:
   number: 0
   script: python setup.py install --single-version-externally-managed --record=record.txt
-  skip: True # [py<36]
+  skip: True  # [py<36]
+
 requirements:
   build:
       - python
       - setuptools
-      - numpy
-      - pyparsing
-
   run:
       - python
       - setuptools
@@ -44,11 +42,3 @@ about:
   license_file: '{{ environ["RECIPE_DIR"] }}/LICENSE'
   dev_url: https://github.com/pyepics/pyepics
   doc_url: http://pyepics.github.io/pyepics
-
-extra:
-  recipe-maintainers:
-    - CJ-Wright
-    - jrmlhermitte
-    - stuartcampbell
-    - mrakitin
-    - hhslepicka
