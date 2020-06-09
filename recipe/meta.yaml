@@ -1,30 +1,30 @@
 {% set name = "pyepics" %}
-{% set version = "3.4.1" %}
-{% set sha256 = "a995685638c01a9326d3414de9b5471fb7b0bf6b1c60de1efae778c25dedaabf" %}
+{% set version = "3.4.2" %}
+{% set sha256 = "673fc8f6c8a2663c15473938fd3b55c2d3431dc739aa479b6d9d005373219068" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-   url: https://github.com/pyepics/{{ name }}/archive/{{ version }}.tar.gz
-   sha256: {{ sha256 }}
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip: True  # [py<36]
 
 requirements:
   host:
-      - python
-      - pip
+    - python
+    - pip
   run:
-      - python
+    - python
       # pkg_resources used in epics/ca.py
-      - setuptools
-      - epics-base
-      - numpy
-      - pyparsing
+    - setuptools
+    - epics-base
+    - numpy
+    - pyparsing
 
 test:
   imports:
@@ -38,7 +38,7 @@ test:
 about:
   home: http://pyepics.github.io/pyepics/
   license: Epics Open
-  summary: Python interface to Epics Channel Access
   license_file: LICENSE
+  summary: Python interface to Epics Channel Access
   dev_url: https://github.com/pyepics/pyepics
   doc_url: http://pyepics.github.io/pyepics
