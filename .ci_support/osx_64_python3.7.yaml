@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+cdt_name:
+- cos6
 channel_sources:
 - nsls2forge,defaults
 channel_targets:
